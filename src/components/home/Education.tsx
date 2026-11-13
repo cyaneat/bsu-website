@@ -1,4 +1,5 @@
 import { BookOpen } from "lucide-react";
+import Link from "next/link";
 
 const education = [
   {
@@ -49,6 +50,24 @@ export default function Education() {
               ))}
             </div>
           </div>
+          <div className="mx-auto mt-10 max-w-7xl px-5 sm:px-8">
+  <Link
+  href="/faculties"
+  className="inline-flex items-center rounded-xl bg-[#102b4e] px-6 py-3 font-semibold text-white transition hover:bg-blue-800"
+>
+  Смотреть все факультеты →
+</Link>
+</div>
+        
+<div className="mx-auto mt-6 max-w-7xl px-5 sm:px-8">
+  <Link
+    href="/departments"
+    className="inline-flex items-center rounded-xl border border-[#102b4e] px-6 py-3 font-semibold text-[#102b4e] transition hover:bg-[#102b4e] hover:text-white"
+  >
+    Смотреть все кафедры →
+  </Link>
+</div>
+
         </section>
     </>
   );
