@@ -1,0 +1,7 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import { aboutSources, historyEvents } from '@/lib/about-data';
+export const metadata: Metadata = { title: 'История университета | БГУ' };
+export default function HistoryPage(){return <div className="min-h-screen bg-[#f5f7fb]"><Header/><main><section className="bg-[#102b4e] px-5 py-16 text-white sm:px-8"><div className="mx-auto max-w-6xl"><Link href="/about" className="text-sm text-blue-100 hover:underline">← Об университете</Link><h1 className="mt-7 text-4xl font-extrabold">История БГУ</h1><p className="mt-3 text-blue-100">Ключевые этапы становления университета</p></div></section><section className="mx-auto max-w-6xl px-5 py-12 sm:px-8"><ol className="space-y-5">{historyEvents.map(e=><li key={e.year} className="grid gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:grid-cols-[110px_1fr]"><span className="text-3xl font-extrabold text-[#a7864c]">{e.year}</span><div><h2 className="text-xl font-bold text-[#102b4e]">{e.title}</h2><p className="mt-2 leading-7 text-slate-600">{e.description}</p></div></li>)}</ol><a className="mt-8 inline-block font-semibold text-[#102b4e] underline" href={aboutSources.history} target="_blank" rel="noopener noreferrer">Историческая справка на старом сайте БГУ ↗</a></section></main><Footer/></div>}

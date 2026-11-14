@@ -13,13 +13,17 @@ export const navigation: NavSection[] = [
   {
     title: "Университет", summary: "Структура, руководство и жизнь университета",
     groups: [
-      { title: "О БГУ", links: [
-        { label: "Об университете", href: "/#sections" },
-        { label: "История университета" },
-        { label: "Ректорат" },
-        { label: "Учёный совет" },
-        {label: "Преподаватели и сотрудники", href: "/staff"},
-      ] },
+      {
+  title: "О БГУ",
+  links: [
+    { label: "Об университете", href: "/about" },
+    { label: "История университета", href: "/about/history" },
+    { label: "Миссия университета", href: "/about/mission" },
+    { label: "Ректорат", href: "/about/leadership" },
+    { label: "Учёный совет" },
+    { label: "Преподаватели и сотрудники", href: "/staff" },
+  ],
+},
       
 {
   title: "Структура",
@@ -35,9 +39,7 @@ export const navigation: NavSection[] = [
     {
       label: "Административные подразделения"
     },
-    {
-      label: "Контактная информация"
-    },
+    { label: "Контактная информация", href: "/contacts" },
   ],
 },
 
