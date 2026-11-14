@@ -18,6 +18,7 @@ export const navigation: NavSection[] = [
         { label: "История университета" },
         { label: "Ректорат" },
         { label: "Учёный совет" },
+        {label: "Преподаватели и сотрудники", href: "/staff"},
       ] },
       
 {
