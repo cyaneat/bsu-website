@@ -1,7 +1,4 @@
-import type { Metadata } from 'next';
-import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
-import AdmissionsShell from '@/components/admissions/AdmissionsShell';
-import { admissionSources, domesticDocuments, foreignDocuments } from '@/lib/admissions-data';
-export const metadata:Metadata = {title:'Документы для поступления | БГУ'};
-function DocumentList({items}:{items:string[]}){return <ul className="mt-5 space-y-3">{items.map(item=><li key={item} className="flex gap-3 text-sm leading-6 text-slate-700"><CheckCircle2 size={19} className="mt-1 shrink-0 text-[#a7864c]"/>{item}</li>)}</ul>}
-export default function AdmissionDocuments(){return <AdmissionsShell title="Необходимые документы" description="Перечень документов, приведённый на действующем сайте университета. Требования для конкретной программы и года набора следует уточнить."><section className="rounded-2xl bg-white p-6 shadow-sm sm:p-8"><h2 className="text-2xl font-bold text-[#102b4e]">Гражданам Кыргызстана</h2><DocumentList items={domesticDocuments}/></section><section className="rounded-2xl bg-white p-6 shadow-sm sm:p-8"><h2 className="text-2xl font-bold text-[#102b4e]">Иностранным гражданам</h2><DocumentList items={foreignDocuments}/></section><p className="text-sm leading-7 text-slate-600">Перечень составлен по официальной странице БГУ. Для отдельных уровней обучения и программ возможны дополнительные документы.</p><a href={admissionSources.documents} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-semibold text-[#102b4e] hover:underline">Проверить исходный перечень <ArrowUpRight size={17}/></a></AdmissionsShell>}
+import type { Metadata } from "next";
+import AdmissionsLocalized from "@/components/admissions/AdmissionsLocalized";
+export const metadata: Metadata = { title: "Документы для поступления | БГУ" };
+export default function Page() { return <AdmissionsLocalized view="documents" />; }
