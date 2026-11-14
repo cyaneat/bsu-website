@@ -95,7 +95,7 @@ export const navigation: NavSection[] = [
         { label: "Электронные сервисы", href: "/#services" },
         { label: "Библиотека", href: "/#services" },
         { label: "Расписание", href: "/#services" },
-        { label: "Документы", href: "/#services" },
+        { label: "Документы", href: "/documents" },
       ] },
       { title: "Студенческая жизнь", links: [
         { label: "Новости университета", href: "/#news" },
