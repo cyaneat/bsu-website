@@ -65,14 +65,14 @@ export const navigation: NavSection[] = [
     title: "Поступление", summary: "Всё необходимое для будущих студентов",
     groups: [
       { title: "Абитуриентам", links: [
-        { label: "Образовательные направления", href: "/#education" },
-        { label: "Приёмная комиссия" },
-        { label: "Правила поступления" },
-        { label: "Стоимость обучения" },
+        { label: "Образовательные направления", href: "/programs" },
+        { label: "Приёмная комиссия", href: "/admissions" },
+        { label: "Правила поступления", href: "/admissions/rules" },
+        { label: "Стоимость обучения", href: "/admissions/tuition" },
       ] },
       { title: "Дополнительно", links: [
-        { label: "Иностранным абитуриентам" },
-        { label: "Часто задаваемые вопросы" },
+        { label: "Иностранным абитуриентам", href: "/admissions/international" },
+        { label: "Часто задаваемые вопросы", href: "/admissions/faq" },
       ] },
     ],
   },
