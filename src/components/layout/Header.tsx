@@ -26,7 +26,14 @@ export default function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
         <Link href="/" onClick={()=>setMobileOpen(false)} className="flex shrink-0 items-center gap-3" aria-label="BSU home">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#102b4e] text-white"><GraduationCap size={27} aria-hidden="true"/></div>
-          <div><div className="text-2xl font-extrabold tracking-tight text-[#102b4e]">БГУ</div><div className="max-w-44 text-[10px] leading-tight text-slate-500">{t("uniBy")}</div></div>
+          <div><div className="text-2xl font-extrabold tracking-tight text-[#102b4e]">
+  {{
+    ru: "БГУ",
+    ky: "БМУ",
+    en: "BSU",
+    "zh-CN": "比什凯克国立大学",
+  }[locale]}
+</div><div className="max-w-44 text-[10px] leading-tight text-slate-500">{t("uniBy")}</div></div>
         </Link>
         <MegaMenu/>
         <div className="flex items-center gap-2">
