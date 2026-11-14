@@ -79,12 +79,16 @@ export const navigation: NavSection[] = [
   {
     title: "Наука", summary: "Исследования, конференции и публикации",
     groups: [
-      { title: "Научная деятельность", links: [
-        { label: "Научные исследования" },
-        { label: "Конференции" },
-        { label: "Научные публикации" },
-        { label: "Диссертационные советы" },
-      ] },
+      {
+      title: "Научная деятельность",
+      links: [
+              { label: "Обзор науки БГУ", href: "/science" },
+              { label: "Научные исследования", href: "/science/research" },
+              { label: "Конференции", href: "/science/conferences" },
+              { label: "Научные публикации", href: "/science/publications" },
+              { label: "Диссертационные советы", href: "/science/dissertation-councils" },
+            ],
+      },
       { title: "Актуальное", links: [
         { label: "Новости и мероприятия", href: "/#news" },
         { label: "Международные проекты" },
