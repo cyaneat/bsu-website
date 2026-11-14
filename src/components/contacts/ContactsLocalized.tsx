@@ -1,0 +1,48 @@
+"use client";
+
+import Link from "next/link";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import { useLocale } from "@/components/i18n/LocaleProvider";
+import { contactsUi } from "@/lib/contacts-i18n";
+import { aboutSources, contactData } from "@/lib/about-data";
+
+export default function ContactsLocalized() {
+  const { locale } = useLocale();
+  const t = contactsUi[locale];
+  return (
+    <div className="min-h-screen bg-[#f5f7fb]">
+      <Header />
+      <main>
+        <section className="bg-[#102b4e] px-5 py-16 text-white sm:px-8">
+          <div className="mx-auto max-w-6xl">
+            <Link href="/" className="text-sm text-blue-100 hover:underline">{t.home}</Link>
+            <h1 className="mt-7 text-4xl font-extrabold">{t.title}</h1>
+          </div>
+        </section>
+        <section className="mx-auto grid max-w-6xl gap-6 px-5 py-12 sm:px-8 lg:grid-cols-2">
+          <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+            <h2 className="text-2xl font-bold text-[#102b4e]">{t.addressTitle}</h2>
+            <p className="mt-4 leading-7 text-slate-700">{t.address}</p>
+            <h3 className="mt-7 font-bold text-[#102b4e]">{t.email}</h3>
+            <a className="mt-2 inline-block text-blue-800 underline" href={`mailto:${contactData.email}`}>{contactData.email}</a>
+            <p className="mt-7 text-sm text-slate-500">{t.advice}</p>
+          </div>
+          <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+            <h2 className="text-2xl font-bold text-[#102b4e]">{t.phones}</h2>
+            <div className="mt-5 space-y-4">
+              {contactData.phones.map((phone, index) => (
+                <div key={phone.value} className="border-b border-slate-100 pb-3">
+                  <p className="text-sm text-slate-500">{t.phoneLabels[index] ?? phone.label}</p>
+                  <a className="mt-1 inline-block font-semibold text-[#102b4e] hover:underline" href={`tel:${phone.value.replace(/[^\d+]/g, "")}`}>{phone.value}</a>
+                </div>
+              ))}
+            </div>
+          </div>
+          <a className="text-sm font-semibold text-[#102b4e] underline" href={aboutSources.contacts} target="_blank" rel="noopener noreferrer">{t.verify} ↗</a>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}
