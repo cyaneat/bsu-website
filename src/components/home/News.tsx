@@ -1,37 +1,4 @@
-import { Newspaper } from "lucide-react";
-
-export default function News() {
-  return (
-    <>
-    {/* Новости */}
-        <section id="news" className="scroll-mt-28 bg-[#f5f7fb] py-20">
-          <div className="mx-auto max-w-7xl px-5 sm:px-8">
-            <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#a7864c]">
-                  Пресс-центр
-                </p>
-                <h2 className="text-3xl font-bold text-[#102b4e]">
-                  Новости и события
-                </h2>
-              </div>
-              <span className="text-sm text-slate-500">
-                Подключение к API запланировано
-              </span>
-            </div>
-
-            <div className="rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-16 text-center">
-              <Newspaper size={42} className="mx-auto text-slate-400" />
-              <h3 className="mt-5 text-xl font-bold">
-                Лента новостей университета
-              </h3>
-              <p className="mx-auto mt-3 max-w-md text-sm text-slate-500">
-                Здесь будут отображаться реальные новости, фотографии,
-                даты публикаций и анонсы мероприятий из backend API.
-              </p>
-            </div>
-          </div>
-        </section>
-    </>
-  );
-}
+import Link from "next/link";
+import { ArrowRight, CalendarDays, Newspaper } from "lucide-react";
+import { newsRecords, formatNewsDate } from "@/lib/news-data";
+export default function News(){const latest=[...newsRecords].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,3);return <section id="news" className="scroll-mt-28 bg-[#f5f7fb] py-20"><div className="mx-auto max-w-7xl px-5 sm:px-8"><div className="mb-10 flex flex-wrap items-end justify-between gap-4"><div><p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#a7864c]">Пресс-центр</p><h2 className="text-3xl font-bold text-[#102b4e]">Новости и события</h2></div><Link href="/news" className="inline-flex items-center gap-2 rounded-xl bg-[#102b4e] px-5 py-3 text-sm font-semibold text-white hover:bg-blue-900">Все новости <ArrowRight size={17}/></Link></div><div className="grid gap-5 md:grid-cols-3">{latest.map(x=><Link key={x.slug} href={`/news/${x.slug}`} className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md"><div className="flex items-center gap-3 text-sm font-semibold text-[#a7864c]"><Newspaper size={17}/>{x.category}</div><h3 className="mt-4 text-lg font-bold leading-snug text-[#102b4e] group-hover:underline">{x.title}</h3><p className="mt-3 text-sm leading-6 text-slate-600">{x.excerpt}</p><div className="mt-6 flex items-center gap-2 text-xs text-slate-500"><CalendarDays size={15}/>{formatNewsDate(x.date)}</div></Link>)}</div><p className="mt-5 text-xs text-slate-500">Начальная подборка с bsu.kg. Автоматическое обновление подключим через API.</p></div></section>}

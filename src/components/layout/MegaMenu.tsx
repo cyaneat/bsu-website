@@ -90,7 +90,7 @@ export const navigation: NavSection[] = [
             ],
       },
       { title: "Актуальное", links: [
-        { label: "Новости и мероприятия", href: "/#news" },
+        { label: "Новости и мероприятия", href: "/news" },
         { label: "Международные проекты" },
       ] },
     ],
@@ -105,7 +105,7 @@ export const navigation: NavSection[] = [
         { label: "Документы", href: "/documents" },
       ] },
       { title: "Студенческая жизнь", links: [
-        { label: "Новости университета", href: "/#news" },
+        { label: "Новости университета", href: "/news" },
         { label: "Студенческие организации" },
         { label: "Общежития" },
       ] },
