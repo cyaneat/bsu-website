@@ -52,7 +52,7 @@ export const navigation: NavSection[] = [
         { label: "Аспирантура", href: "/#education" },
       ] },
       { title: "Учебный процесс", links: [
-        { label: "Образовательные программы" },
+        { label: "Образовательные программы", href: "/programs" },
         { label: "Академический календарь" },
         { label: "Расписание занятий" },
       ] },
